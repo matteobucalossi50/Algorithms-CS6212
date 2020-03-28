@@ -13,17 +13,6 @@ import java.util.Random;
 //For example, given an array [100, 300, 400, 50] and integer k = 1, the array b can be: [0 1 1 0], which maximizes the sum to be 700. 
 //Or, given an array [10, 100, 300, 400, 50, 4500, 200, 30, 90] and k = 2, the array b can be [1, 0, 1, 1, 0, 1, 1, 0, 1] which maximizes the sum to 5500.
 
-
-// MVBLN(i,m): Maximum value sum that can be achieved from the array A[1..i], using adjacent 1s at most m times.
-
-// MVBLN(i,m) = max{MVBLN(i-1,m), MVBLN(i-1,m-1) + A[i], MVBLN(i-2,m) + A[i]}
-
-// Base Case: MVBLN(i,0) can be solved separately, using a separate problem, that we can call maximum value no neighbors.  
-// MVNN(i) = max{MVNN(i-1), MVNN(i-2) + A[i]}.     MVNN(0) = 0.  MVNN(1) = a[1].  MVNN(2) = max{a[1], a[2]}.
-
-// https://php.developreference.com/article/18372919/At+most+k+adjacent+1s+(Maximum+Value+limited+neighbors)
-
-
 public class main {
 	
 	// return array from 0 but algo explained using indexes from 1
@@ -67,6 +56,8 @@ public class main {
 			return base(a, i);
 		}
 		
+		// bottom-up method
+		
 		// initialize 2d array b with dims n and k
 		int [][] b = new int[i+1][j+1];
 		
@@ -94,7 +85,7 @@ public class main {
 					b[r][c] = base(a, r);
 				}
 				
-				// get max sum value as from recurrence relation 
+				// get max sum value as from recurrence relation: 
 				// M(n,k)=max⁡{M(n-1,k),M(n-1,k-1)+a[n],M(n-2,k)+a[n]}
 				else {
 					b[r][c] = Math.max(Math.max(b[r-1][c], b[r-1][c-1] + a[r-1]), b[r-2][c] + a[r-1]);
@@ -104,13 +95,13 @@ public class main {
 
 		//System.out.println(Arrays.deepToString(b));
 		return b[i][j];
-
-		//		return  Math.max(Math.max(method(a, i-1, j), method(a, i-1, j-1) + a[i]), method(a, i-2, j) + a[i]);
-
-		//      Math.max(M[i-1, j], M[i-1, j-1] + a[i], M[i-2, j] + a[i])
+		
+		//	call if wanted to use bottom-up method:
+		//	return  Math.max(Math.max(method(a, i-1, j), method(a, i-1, j-1) + a[i]), method(a, i-2, j) + a[i]);
 
 	}	
-
+	
+	// method to generate random arrays
 	public static int [] generateRandomArray(int n){
 		int [] list = new int [n];
 		Random random = new Random();
@@ -128,10 +119,11 @@ public class main {
 		int arrA[] = generateRandomArray(100000);
 		int k = arrA.length/10;
 		
+		// recording run time
 		Instant start = Instant.now();
 		
+		// calling algorithm
 		System.out.println(method(arrA, arrA.length, k));
-
 
 		Instant finish = Instant.now();
 		
@@ -139,10 +131,8 @@ public class main {
 		
 		System.out.println("Time elapsed = " + timeElapsed);
 		
-		// O(nk)
+		// time complexity: O(nk)
 
 	}
 
 }					
-
-
