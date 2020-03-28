@@ -4,30 +4,31 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Scanner;
 
-public class main1 {
+// pretty random algorithm running in O(n^3)
+public class main {
 
 	public static void main (String[] args) {
 
 // do not run n < 20!
 
-			int n = 100000;
+		int n = 100000;
 //
 //		int n1 = 100;
 //		int n2 = 10000;
 //		int n3 = 100000;
 
-			Instant start = Instant.now();
+		Instant start = Instant.now();
+		
+		// call algorithm
+		method2(n);
 
-			method2(n);
+		Instant finish = Instant.now();
 
-			Instant finish = Instant.now();
+		long timeElapsed = Duration.between(start, finish).toMillis();
 
-			long timeElapsed = Duration.between(start, finish).toMillis();
-
-			System.out.println("Time elapsed = " + timeElapsed);
+		System.out.println("Time elapsed = " + timeElapsed);
 
 	}
-
 
 	public static void method(int n) {
 
