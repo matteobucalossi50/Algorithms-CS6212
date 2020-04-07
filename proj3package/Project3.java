@@ -42,8 +42,8 @@ public class Project3 {
 			// base RR: return max value betw these 2 options 
 			else {
 				b[x] = Math.max(b[x-1], b[x-2] + a[x-1]);
-				System.out.println("base 1 " + b[x-1]);
-				System.out.println("base 2 " + (b[x-2] + a[x-1]));
+				//System.out.println("base 1 " + b[x-1]);
+				//System.out.println("base 2 " + (b[x-2] + a[x-1]));
 			}
 		}	
 		return b[i]; 
@@ -91,9 +91,9 @@ public class Project3 {
 				// M(n,k)=max⁡{M(n-1,k),M(n-1,k-1)+a[n],M(n-2,k)+a[n]}
 				else {
 					b[r][c] = Math.max(Math.max(b[r-1][c], b[r-1][c-1] + a[r-1]), b[r-2][c] + a[r-1]);
-					System.out.println("gen 1 " + b[r-1][c]);
-					System.out.println("gen 2 " + (b[r-1][c-1] + a[r-1]));
-					System.out.println("gen 3 " + (b[r-2][c] + a[r-1]));
+					//System.out.println("gen 1 " + b[r-1][c]);
+					//System.out.println("gen 2 " + (b[r-1][c-1] + a[r-1]));
+					//System.out.println("gen 3 " + (b[r-2][c] + a[r-1]));
 				}
 			}
 		}
