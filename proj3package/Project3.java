@@ -102,7 +102,7 @@ public class Project3 {
 		//System.out.println(Arrays.deepToString(b));
 		return b[i][j];
 
-		//call if wanted to use top-down way:
+		//call if wanted to use top-down way, and more edits:
 		//return  Math.max(Math.max(method(a, i-1, j), method(a, i-1, j-1) + a[i-1]), method(a, i-2, j) + a[i-1]);
 
 	}	
