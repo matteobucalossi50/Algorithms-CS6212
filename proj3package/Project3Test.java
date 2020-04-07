@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Project3Test {    
-    
+class Project3Test {
+      
     @Test
     public void testBase() {
 	
