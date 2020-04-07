@@ -4,10 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Project3Test {
-  
-//    int a[] = {20, 300, 400, 50, 200};       //result max sum: 900
-    
+class Project3Test {    
     
     @Test
     public void testBase() {
