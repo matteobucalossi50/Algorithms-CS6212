@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.Scanner;
 
 // pretty random algorithm running in O(n^3)
-public class main {
+public class Project1 {
 
 	public static void main (String[] args) {
 
